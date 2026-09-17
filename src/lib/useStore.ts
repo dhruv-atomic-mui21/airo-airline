@@ -16,6 +16,7 @@ const DEFAULT_SESSION: ChatSession = {
   id: 'sess-9876',
   customerId: 'C12345',
   status: 'active',
+  handledBy: 'ai',
   messages: [
     {
       id: 'msg-1',
@@ -37,7 +38,12 @@ export function useStore() {
     const stored = localStorage.getItem(STORE_KEY);
     if (stored) {
       try {
-        setSession(JSON.parse(stored));
+        const parsed = JSON.parse(stored);
+        setSession({
+          ...DEFAULT_SESSION,
+          ...parsed,
+          handledBy: parsed.handledBy || (parsed.status === 'agent_handling' ? 'agent' : 'ai'),
+        });
       } catch (e) {
         console.error('Failed to parse session from local storage', e);
       }
@@ -51,7 +57,16 @@ export function useStore() {
   useEffect(() => {
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === STORE_KEY && e.newValue) {
-        setSession(JSON.parse(e.newValue));
+        try {
+          const parsed = JSON.parse(e.newValue);
+          setSession({
+            ...DEFAULT_SESSION,
+            ...parsed,
+            handledBy: parsed.handledBy || (parsed.status === 'agent_handling' ? 'agent' : 'ai'),
+          });
+        } catch (e) {
+          console.error('Failed to parse storage update', e);
+        }
       }
     };
     window.addEventListener('storage', handleStorageChange);

@@ -1,0 +1,108 @@
+{
+  "nodes": {
+    "src/app/globals.css": {
+      "type": "file"
+    },
+    "src/app/layout.tsx": {
+      "type": "file"
+    },
+    "src/app/page.tsx": {
+      "type": "file"
+    },
+    "src/app/agent/page.tsx": {
+      "type": "file"
+    },
+    "src/app/api/assist/route.ts": {
+      "type": "file"
+    },
+    "src/app/api/chat/route.ts": {
+      "type": "file"
+    },
+    "src/app/customer/page.tsx": {
+      "type": "file"
+    },
+    "src/lib/useStore.ts": {
+      "type": "file"
+    },
+    "src/types/index.ts": {
+      "type": "file"
+    }
+  },
+  "edges": [
+    {
+      "source": "src/app/globals.css",
+      "target": "tailwindcss"
+    },
+    {
+      "source": "src/app/layout.tsx",
+      "target": "next"
+    },
+    {
+      "source": "src/app/layout.tsx",
+      "target": "next/font/google"
+    },
+    {
+      "source": "src/app/layout.tsx",
+      "target": "./globals.css"
+    },
+    {
+      "source": "src/app/page.tsx",
+      "target": "next/link"
+    },
+    {
+      "source": "src/app/page.tsx",
+      "target": "lucide-react"
+    },
+    {
+      "source": "src/app/agent/page.tsx",
+      "target": "react"
+    },
+    {
+      "source": "src/app/agent/page.tsx",
+      "target": "@/lib/useStore"
+    },
+    {
+      "source": "src/app/agent/page.tsx",
+      "target": "lucide-react"
+    },
+    {
+      "source": "src/app/api/assist/route.ts",
+      "target": "next/server"
+    },
+    {
+      "source": "src/app/api/chat/route.ts",
+      "target": "next/server"
+    },
+    {
+      "source": "src/app/customer/page.tsx",
+      "target": "react"
+    },
+    {
+      "source": "src/app/customer/page.tsx",
+      "target": "@/lib/useStore"
+    },
+    {
+      "source": "src/app/customer/page.tsx",
+      "target": "lucide-react"
+    },
+    {
+      "source": "src/lib/useStore.ts",
+      "target": "react"
+    },
+    {
+      "source": "src/lib/useStore.ts",
+      "target": "@/types"
+    }
+  ],
+  "hashes": {
+    "src/app/globals.css": "769edf77bd0d101a2d26e6c5656defba8cd885ff37d92279fa293a2756fe5651",
+    "src/app/layout.tsx": "b9be4107740a96a6d93740791dad6a7a5bd588669dae9e620f4b33c20fd140c5",
+    "src/app/page.tsx": "06caf7af701bee58d5cd7c6b9920e6147b8b363c7bc2781e55c9c7d75573f099",
+    "src/app/agent/page.tsx": "2525c199466f81a2f84c5c15f56a1d32a4173288ce2f0bc062c92f1e1c0f2590",
+    "src/app/api/assist/route.ts": "5307d2a7c28678ec0bca7e0e5af79113d6b6b60a201fdf2b7da49e7eb4192984",
+    "src/app/api/chat/route.ts": "7881a44120fe0724407fa42de0c3868ee1f8a96f2c36fd13029f1a44c1bac48f",
+    "src/app/customer/page.tsx": "bc527e8870f733ec48b706b6c54584be9a17ce078e8ec20b4fa7adc08ae2ea52",
+    "src/lib/useStore.ts": "a406254e1002bcff6075eb350a8a97d65ca26157b8884081ae5132d6e6bc9805",
+    "src/types/index.ts": "35ea058cc144e0bface7801101bba64ab9641a7a74839d4b0c1dcafea21fd242"
+  }
+}

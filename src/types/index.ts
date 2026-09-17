@@ -17,9 +17,17 @@ export type CustomerProfile = {
   };
 };
 
+export type EscalationInfo = {
+  reason: string;
+  urgency: 'normal' | 'high' | 'critical';
+  timestamp: number;
+};
+
 export type ChatSession = {
   id: string;
   customerId: string;
-  status: 'active' | 'escalated' | 'closed';
+  status: 'active' | 'escalated' | 'agent_handling' | 'resolved' | 'closed';
+  handledBy: 'ai' | 'agent';
+  escalationInfo?: EscalationInfo;
   messages: Message[];
 };
